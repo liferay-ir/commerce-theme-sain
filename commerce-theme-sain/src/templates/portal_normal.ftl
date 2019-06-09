@@ -41,20 +41,23 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="welcome-message">
-                            <p>
-                                <a href="/c/portal/login"> وارد شوید </a>یا <a href="/c/portal/login">ثبت نام کنید</a>
-                            </p>
+                            <p>Welcome to Online Shopping Store !</p>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="header-top-settings">
                             <ul class="nav align-items-center">
                                 <li class="account-settings">
-                                    حساب کاربری
-                                    <i class="fa fa-angle-down"></i>
-                                    <@site_navigation_menu_0 default_preferences=freeMarkerPortletPreferences.getPreferences("portletSetupPortletDecoratorId", "barebone") />
+                                    <@liferay_commerce["user-management-bar"]
+                                    href=accountManagementUrl
+                                    showNotifications=true
+                                    />
+                                    <#if (is_signed_in)>
+                                        <i class="fa fa-angle-down"></i>
+                                        <@site_navigation_menu_0 default_preferences=freeMarkerPortletPreferences.getPreferences("portletSetupPortletDecoratorId", "barebone") />
+                                    </#if>
                                 </li>
-                                <li class="language">
+                                <!--li class="language">
                                     <#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "Barebone") />
                                     <#assign theme_groupID = htmlUtil.escape(theme_display.getCompanyGroupId()?string) />
                                     <@liferay_portlet["runtime"]
@@ -63,7 +66,7 @@
                                     instanceId="lang"
                                     portletName="com_liferay_site_navigation_language_web_portlet_SiteNavigationLanguagePortlet" />
                                     ${freeMarkerPortletPreferences.reset()}
-                                </li>
+                                </li-->
                             </ul>
                         </div>
                     </div>
@@ -90,34 +93,11 @@
                     <div class="col-lg-6">
                         <div class="search-box-wrapper">
                             <div class="search-box-inner-wrap">
-                                <form class="search-box-inner">
-                                    <div class="search-field-wrap">
-                                        <input type="text" class="search-field" placeholder="Enter your search key">
-                                    </div>
-                                    <div class="search-select-box">
-                                        <#--<select>-->
-                                            <#--<optgroup label="organic food">-->
-                                                <#--<option value="volvo">All categories</option>-->
-                                                <#--<option value="saab">watch</option>-->
-                                                <#--<option value="saab">air cooler</option>-->
-                                                <#--<option value="saab">audio</option>-->
-                                                <#--<option value="saab">speakers</option>-->
-                                                <#--<option value="saab">amplifires</option>-->
-                                            <#--</optgroup>-->
-                                            <#--<optgroup label="Fashion">-->
-                                                <#--<option value="mercedes">Womens tops</option>-->
-                                                <#--<option value="audi">Jeans</option>-->
-                                                <#--<option value="audi">Shirt</option>-->
-                                                <#--<option value="audi">Pant</option>-->
-                                                <#--<option value="audi">Watch</option>-->
-                                                <#--<option value="audi">Handbag</option>-->
-                                            <#--</optgroup>-->
-                                        <#--</select>-->
-                                    </div>
-                                    <div class="search-btn">
-                                        <button><i class="ion-ios-search"></i></button>
-                                    </div>
-                                </form>
+                                <#assign
+                                preferences = freeMarkerPortletPreferences.getPreferences({"portletSetupPortletDecoratorId": "barebone"})
+                                />
+
+								<@liferay.search_bar default_preferences="${preferences}" />
                             </div>
                         </div>
                     </div>
@@ -178,8 +158,8 @@
                                 <img src="${images_folder}/icon/download.png" alt="">
                             </div>
                             <div class="contact-top-info">
-                                <p></p>
-                                <a href="#"></a>
+                                <p>شماره تماس</p>
+                                <a href="#">09136549865</a>
                             </div>
                         </div>
                     </div>
@@ -335,35 +315,16 @@
     <div class="newsletter-area theme-color-2 pt-36 pb-36">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="newsletter-title">
-                        <h3>خبرنامه</h3>
-                        <p>برای دریافت آخرین اخبار در خبرنامه عضوشوید.</p>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-6">
-                    <div class="newsletter-inner">
-                        <form id="mc-form">
-                            <input type="email" class="news-field" id="mc-email" autocomplete="off"
-                                   placeholder="پست الکترونیک">
-                            <button class="news-btn" id="mc-submit">عضویت</button>
-                        </form>
-                        <!-- mailchimp-alerts Start -->
-                        <div class="mailchimp-alerts">
-                            <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
-                            <div class="mailchimp-success"></div><!-- mailchimp-success end -->
-                            <div class="mailchimp-error"></div><!-- mailchimp-error end -->
-                        </div>
-                        <!-- mailchimp-alerts end -->
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="footer-social-link">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                    </div>
+                <div class="col-xl-9 col-lg-12 m-auto">
+                    <#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "Barebone") />
+                    <#assign theme_groupID = htmlUtil.escape(theme_display.getCompanyGroupId()?string) />
+                    <#assign VOID = freeMarkerPortletPreferences.setValue("articleId", '') />
+                    <@liferay_portlet["runtime"]
+                    defaultPreferences="${freeMarkerPortletPreferences}"
+                    portletProviderAction=portletProviderAction.VIEW
+                    instanceId="footerArticleShip"
+                    portletName="com_liferay_journal_content_web_portlet_JournalContentPortlet" />
+                ${freeMarkerPortletPreferences.reset()}
                 </div>
             </div>
         </div>
@@ -408,17 +369,7 @@
     <div class="footer-middle-area bg-gray">
         <div class="container">
             <div class="row">
-                <div class="col-xl-9 col-lg-12 m-auto">
-                    <#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "Barebone") />
-                    <#assign theme_groupID = htmlUtil.escape(theme_display.getCompanyGroupId()?string) />
-                    <#assign VOID = freeMarkerPortletPreferences.setValue("articleId", '') />
-                    <@liferay_portlet["runtime"]
-                    defaultPreferences="${freeMarkerPortletPreferences}"
-                    portletProviderAction=portletProviderAction.VIEW
-                    instanceId="footerArticleShip"
-                    portletName="com_liferay_journal_content_web_portlet_JournalContentPortlet" />
-                    ${freeMarkerPortletPreferences.reset()}
-                </div>
+
                 <div class="col-lg-12">
                     <#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "Barebone") />
                     <#assign theme_groupID = htmlUtil.escape(theme_display.getCompanyGroupId()?string) />

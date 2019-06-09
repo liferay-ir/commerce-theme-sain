@@ -1,1 +1,1 @@
-# commerce-theme-sain
+# A theme for Liferay Commerce
