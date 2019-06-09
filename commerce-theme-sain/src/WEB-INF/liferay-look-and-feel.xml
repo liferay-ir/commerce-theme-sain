@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 7.1.0//EN" "http://www.liferay.com/dtd/liferay-look-and-feel_7_1_0.dtd">
+
+<look-and-feel>
+	<compatibility>
+		<version>7.1.0+</version>
+	</compatibility>
+	<theme id="commerce-sain" name="Sain Commerce Theme">
+		<template-extension>ftl</template-extension>
+		<settings>
+			<setting configurable="true" key="company-phone-number" type="textarea" />
+			<setting configurable="true" key="copyright" type="textarea" />
+			<setting configurable="true" key="demo-mode" type="checkbox" value="false" />
+			<setting configurable="true" key="header-column-1" type="textarea" />
+			<setting configurable="true" key="header-column-2" type="textarea" />
+			<setting configurable="true" key="header-column-3" type="textarea" />
+			<setting configurable="false" key="show-maximize-minimize-application-links" type="checkbox" value="false" />
+			<setting configurable="false" key="show-site-name-default" value="false" />
+		</settings>
+		<layout-templates>
+			<custom>
+				<layout-template id="commerce_sain_home" name="commerce_sain_home">
+					<template-path>/layouttpl/commerce/commerce_sain_home.ftl</template-path>
+					<thumbnail-path>/layouttpl/commerce/commerce_sain_home.png</thumbnail-path>
+				</layout-template>
+				<layout-template id="commerce_sain_product" name="commerce_sain_product">
+					<template-path>/layouttpl/commerce/commerce_sain_product.ftl</template-path>
+					<thumbnail-path>/layouttpl/commerce/commerce_sain_product.png</thumbnail-path>
+				</layout-template>
+				<layout-template id="commerce_sain_product_details" name="commerce_sain_product_details">
+					<template-path>/layouttpl/commerce/commerce_sain_product_details.ftl</template-path>
+					<thumbnail-path>/layouttpl/commerce/commerce_sain_product_details.png</thumbnail-path>
+				</layout-template>
+				<layout-template id="commerce_sain_cart" name="commerce_sain_cart">
+					<template-path>/layouttpl/commerce/commerce_sain_cart.ftl</template-path>
+					<thumbnail-path>/layouttpl/commerce/commerce_sain_cart.png</thumbnail-path>
+				</layout-template>
+			</custom>
+		</layout-templates>
+		<portlet-decorator id="barebone" name="Barebone">
+			<default-portlet-decorator>true</default-portlet-decorator>
+			<portlet-decorator-css-class>portlet-barebone</portlet-decorator-css-class>
+		</portlet-decorator>
+		<portlet-decorator id="borderless" name="Borderless">
+			<portlet-decorator-css-class>portlet-borderless</portlet-decorator-css-class>
+		</portlet-decorator>
+		<portlet-decorator id="card" name="Card">
+			<portlet-decorator-css-class>portlet-card</portlet-decorator-css-class>
+		</portlet-decorator>
+		<portlet-decorator id="card-inverse" name="Card inverse">
+			<portlet-decorator-css-class>portlet-card-inverse</portlet-decorator-css-class>
+		</portlet-decorator>
+		<portlet-decorator id="decorate" name="Decorate">
+			<portlet-decorator-css-class>portlet-decorate</portlet-decorator-css-class>
+		</portlet-decorator>
+	</theme>
+</look-and-feel>
