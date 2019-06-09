@@ -95,7 +95,7 @@ $('.ht-slick-slider').slick({
 
 
 /*------- nice select active start -------*/
-$('select').niceSelect();
+// $('select').niceSelect();
 /*------- nice select active end -------*/
 
 

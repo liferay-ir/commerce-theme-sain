@@ -90,7 +90,7 @@
 
 
 	/*------- nice select active start -------*/
-	$('select').niceSelect();
+	// $('select').niceSelect();
 	/*------- nice select active end -------*/
 
 
