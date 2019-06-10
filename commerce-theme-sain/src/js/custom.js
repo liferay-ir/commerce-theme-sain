@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    traverse(document.body);
 
     /*------ Sticky menu start ------*/
 var $window = $(window);
@@ -130,7 +129,6 @@ $('[data-countdown]').each(function () {
         finalDate = $(this).data('countdown');
     $this.countdown(finalDate, function (event) {
         $this.html(event.strftime('<div class="single-countdown"><span class="single-countdown__time">%D</span><span class="single-countdown__text">Days</span></div><div class="single-countdown"><span class="single-countdown__time">%H</span><span class="single-countdown__text">Hrs</span></div><div class="single-countdown"><span class="single-countdown__time">%M</span><span class="single-countdown__text">Min</span></div><div class="single-countdown"><span class="single-countdown__time">%S</span><span class="single-countdown__text">Sec</span></div>'));
-        traverse(document.body);
     });
 });
 /*------- Countdown Activation end -------*/
@@ -291,25 +289,4 @@ function mailChimpResponse(resp) {
     }
 }
 });
-// ----------------------- Function Persian Number -----------------------//
-persian={0:'۰',1:'۱',2:'۲',3:'۳',4:'۴',5:'۵',6:'۶',7:'۷',8:'۸',9:'۹'};
-
-function traverse(el){
-    if($('html').hasClass('rtl')) {
-        if (el.nodeType == 3) {
-            var list = el.data.match(/[0-9]/g);
-            if (list != null && list.length != 0) {
-                for (var i = 0; i < list.length; i++)
-                    el.data = el.data.replace(list[i], persian[list[i]]);
-            }
-        }
-        for (var i = 0; i < el.childNodes.length; i++) {
-            if (el.nodeName.toLowerCase() == "style" || el.nodeName.toLowerCase() == "script") {
-                continue;
-            } else {
-                traverse(el.childNodes[i]);
-            }
-        }
-    }
-}
 

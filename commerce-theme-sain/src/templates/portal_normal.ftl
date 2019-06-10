@@ -41,7 +41,15 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="welcome-message">
-                            <p>Welcome to Online Shopping Store !</p>
+                            <#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "Barebone") />
+                    <#assign theme_groupID = htmlUtil.escape(theme_display.getCompanyGroupId()?string) />
+                    <#assign VOID = freeMarkerPortletPreferences.setValue("articleId", '') />
+                    <@liferay_portlet["runtime"]
+                    defaultPreferences="${freeMarkerPortletPreferences}"
+                    portletProviderAction=portletProviderAction.VIEW
+                    instanceId="headerArticleWelcome"
+                    portletName="com_liferay_journal_content_web_portlet_JournalContentPortlet" />
+                        ${freeMarkerPortletPreferences.reset()}
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -139,7 +147,7 @@
                         <div class="category-toggle-wrap">
                             <div class="category-toggle">
                                 <i class="ion-android-menu"></i>
-                                all categories
+                                دسته بندی محصولات
                                 <span><i class="ion-android-arrow-dropdown"></i></span>
                             </div>
                             <@commerce_category_navigation_menu default_preferences=freeMarkerPortletPreferences.getPreferences("portletSetupPortletDecoratorId", "barebone") />
@@ -158,8 +166,15 @@
                                 <img src="${images_folder}/icon/download.png" alt="">
                             </div>
                             <div class="contact-top-info">
-                                <p>شماره تماس</p>
-                                <a href="#">09136549865</a>
+                                <#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "Barebone") />
+                    <#assign theme_groupID = htmlUtil.escape(theme_display.getCompanyGroupId()?string) />
+                    <#assign VOID = freeMarkerPortletPreferences.setValue("articleId", '') />
+                    <@liferay_portlet["runtime"]
+                    defaultPreferences="${freeMarkerPortletPreferences}"
+                    portletProviderAction=portletProviderAction.VIEW
+                    instanceId="headerArticleContact"
+                    portletName="com_liferay_journal_content_web_portlet_JournalContentPortlet" />
+                            ${freeMarkerPortletPreferences.reset()}
                             </div>
                         </div>
                     </div>
@@ -389,7 +404,7 @@
     <!-- footer bottom area start -->
     <div class="footer-bottom-area bg-white">
         <div class="copyright-text">
-            <p>Copyright <a href="http://sain.ir">SAIN</a> All Rights Reserved</p>
+            <p>طراحی و پیاده سازی توسط <a href="http://sain.ir">سپهرافزار ایرانیان</a> </p>
         </div>
     </div>
     <!-- footer bottom area end -->
