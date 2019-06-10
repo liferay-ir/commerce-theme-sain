@@ -269,3 +269,33 @@ span.price__value.price__value--big {
 a {
   color: #44556f;
 }
+.portlet-content-editable {
+  box-shadow: none !important;
+}
+.commerce-button.commerce-button.add-to-cart-button--compact--edit {
+  border: 0 !important;
+}
+.commerce-button.commerce-button--small.commerce-button--good.add-to-cart-button.add-to-cart-button--compact {
+  border: 0 !important;
+}
+.add-to-cart-button--compact__ok .added-quantity {
+  color: #fff;
+}
+td.commerce-compare-table__value {
+  text-align: center;
+}
+td.commerce-compare-table__card {
+  width: 20%;
+}
+section#portlet_com_liferay_login_web_portlet_LoginPortlet .form-group:nth-child(2) {
+  display: none;
+}
+div#_com_liferay_login_web_portlet_LoginPortlet_userNameFields .form-group:nth-child(1) {
+  display: none;
+}
+div#_com_liferay_login_web_portlet_LoginPortlet_userNameFields .form-group:nth-child(3) {
+  display: none;
+}
+div#_com_liferay_login_web_portlet_LoginPortlet_userNameFields .form-group:nth-child(5) {
+  display: none;
+}
