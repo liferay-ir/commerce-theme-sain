@@ -115,11 +115,11 @@
                     <div class="col-lg-3 ml-auto">
                         <div class="header-configure-area">
                             <ul class="nav justify-content-end">
-                                <#--<li>-->
-                                    <#--<a href="${site_default_url}/wishlist">-->
-                                        <#--<i class="ion-android-favorite-outline"></i>-->
-                                    <#--</a>-->
-                                <#--</li>-->
+                                <li>
+                                    <a href="${site_default_url}/wishlist">
+                                        <i class="ion-android-favorite-outline"></i>
+                                    </a>
+                                </li>
                                 <li class="mini-cart-wrap">
                                     <#--<a href="${site_default_url}/cart">-->
                                         <#--<i class="ion-bag"></i>-->
@@ -195,23 +195,19 @@
                         <div class="header-top-settings">
                             <ul class="nav align-items-center justify-content-center">
                                 <li class="account-settings">
-                                    My account
+                                    حساب کاربری
                                     <i class="fa fa-angle-down"></i>
                                     <@site_navigation_menu_0 default_preferences=freeMarkerPortletPreferences.getPreferences("portletSetupPortletDecoratorId", "barebone") />
                                 </li>
-                                <li class="language">
-                                    Language
-                                    <i class="fa fa-angle-down"></i>
-                                    <ul class="dropdown-list">
-                                        <#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "Barebone") />
-                                        <#assign theme_groupID = htmlUtil.escape(theme_display.getCompanyGroupId()?string) />
-                                        <@liferay_portlet["runtime"]
-                                        defaultPreferences="${freeMarkerPortletPreferences}"
-                                        portletProviderAction=portletProviderAction.VIEW
-                                        instanceId="lang"
-                                        portletName="com_liferay_site_navigation_language_web_portlet_SiteNavigationLanguagePortlet" />
-                                        ${freeMarkerPortletPreferences.reset()}
-                                    </ul>
+                                <li class="account-settings">
+                                    <@liferay_commerce["user-management-bar"]
+                                    href=accountManagementUrl
+                                    showNotifications=true
+                                    />
+                                    <#if (is_signed_in)>
+                                        <i class="fa fa-angle-down"></i>
+                                        <@site_navigation_menu_0 default_preferences=freeMarkerPortletPreferences.getPreferences("portletSetupPortletDecoratorId", "barebone") />
+                                    </#if>
                                 </li>
                             </ul>
                         </div>
@@ -226,10 +222,7 @@
                         </div>
                         <div class="mobile-menu-toggler">
                             <div class="mini-cart-wrap">
-                                <a href="${site_default_url}/cart">
-                                    <i class="ion-bag"></i>
-                                    <span class="notification"></span>
-                                </a>
+                                <@liferay_commerce_ui["mini-cart"] />
                             </div>
                             <div class="mobile-menu-btn">
                                 <div class="off-canvas-btn">
@@ -243,7 +236,7 @@
                     <div class="category-toggle-wrap">
                         <div class="category-toggle">
                             <i class="ion-android-menu"></i>
-                            all categories
+                            دسته بندی محصولات
                             <span><i class="ion-android-arrow-dropdown"></i></span>
                         </div>
                         <@commerce_category_navigation_menu default_preferences=freeMarkerPortletPreferences.getPreferences("portletSetupPortletDecoratorId", "barebone") />
@@ -267,11 +260,12 @@
 
         <div class="off-canvas-inner">
             <!-- search box start -->
-            <div class="search-box-offcanvas">
-                <form>
-                    <input type="text" placeholder="Search Here...">
-                    <button class="search-btn"><i class="ion-ios-search-strong"></i></button>
-                </form>
+            <div class="search-box-offcanvas" style="margin-bottom: 15px">
+                <#assign
+                preferences = freeMarkerPortletPreferences.getPreferences({"portletSetupPortletDecoratorId": "barebone"})
+                />
+
+                <@liferay.search_bar default_preferences="${preferences}" />
             </div>
             <!-- search box end -->
 
@@ -288,8 +282,16 @@
             <div class="offcanvas-widget-area">
                 <div class="off-canvas-contact-widget">
                     <ul>
-                        <li><!--i class="fa fa-mobile"></i-->
-                            <a href="#"></a>
+                        <li><i class="fa fa-phone"></i>
+                            <#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "Barebone") />
+                    <#assign theme_groupID = htmlUtil.escape(theme_display.getCompanyGroupId()?string) />
+                    <#assign VOID = freeMarkerPortletPreferences.setValue("articleId", '') />
+                    <@liferay_portlet["runtime"]
+                    defaultPreferences="${freeMarkerPortletPreferences}"
+                    portletProviderAction=portletProviderAction.VIEW
+                    instanceId="headerArticleContact"
+                    portletName="com_liferay_journal_content_web_portlet_JournalContentPortlet" />
+                        ${freeMarkerPortletPreferences.reset()}
                         </li>
                     </ul>
                 </div>
