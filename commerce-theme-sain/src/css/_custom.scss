@@ -284,7 +284,7 @@ td.commerce-compare-table__value {
 td.commerce-compare-table__card {
   width: 20%;
 }
-section#portlet_com_liferay_login_web_portlet_LoginPortlet .form-group:nth-child(2) {
+section#portlet_com_liferay_login_web_portlet_LoginPortlet .form-group.input-select-wrapper:nth-child(2) {
   display: none;
 }
 div#_com_liferay_login_web_portlet_LoginPortlet_userNameFields .form-group:nth-child(1) {
@@ -295,4 +295,13 @@ div#_com_liferay_login_web_portlet_LoginPortlet_userNameFields .form-group:nth-c
 }
 div#_com_liferay_login_web_portlet_LoginPortlet_userNameFields .form-group:nth-child(5) {
   display: none;
+}
+ul.nav.align-items-center.justify-content-center,ul.nav.justify-content-end {
+  flex-direction: unset;
+}
+tr.commerce-compare-table__separator {
+  background: #eaeaea;
+  td {
+    padding: 5px 15px;
+  }
 }

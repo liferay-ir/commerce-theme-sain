@@ -923,10 +923,8 @@ fieldset legend {
 /*---------- header mini cart start ----------*/
 .header-configure-area ul li i{
     display: inline-block;
-    font-size: 36px;
-    line-height: 1;
+    font-size: 31px;
     position: relative;
-    margin-left: 30px;
 }
 
 .header-configure-area ul li a {
@@ -1686,7 +1684,6 @@ only screen and (max-width: 767.98px) {
 .search-box-offcanvas form input {
     color: #666;
     font-size: 13px;
-    width: 100%;
     height: 40px;
     border: 1px solid #e5e5e5;
     padding: 0 40px 0 10px;
