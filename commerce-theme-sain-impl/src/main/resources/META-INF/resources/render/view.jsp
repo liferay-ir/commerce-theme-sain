@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.liferay.portal.kernel.util.Validator" %><%--
 /**
  * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
@@ -73,7 +73,7 @@ String galleryId = PortalUtil.generateRandomKey(request, "gallery");
 				</c:choose>
 			</header>
 
-			<p><%= cpCatalogEntry.getDescription() %></p>
+			<p><%= cpCatalogEntry.getShortDescription() %></p>
 
 			<h4 class="commerce-subscription-info w-100" data-text-cp-instance-subscription-info>
 				<c:if test="<%= cpSku != null %>">
@@ -240,15 +240,56 @@ List<CPMedia> cpAttachmentFileEntries = cpContentHelper.getCPAttachmentFileEntri
 <c:if test="<%= cpContentHelper.hasCPDefinitionSpecificationOptionValues(cpDefinitionId) %>">
 	<div class="row">
 		<div class="col">
+
+			<c:if test="<%= Validator.isNotNull(cpCatalogEntry.getDescription()) %>">
+				<div class="commerce-panel">
+					<div class="commerce-panel__title"><%= LanguageUtil.get(resourceBundle, "descriptions") %>
+					</div>
+					<div class="commerce-panel__content">
+
+						<div class="active fade show tab-pane" id="<portlet:namespace />description">
+							<p><%= cpCatalogEntry.getDescription() %>
+							</p>
+						</div>
+					</div>
+				</div>
+			</c:if>
 			<div class="commerce-panel">
-				<div class="commerce-panel__title"><%= LanguageUtil.get(resourceBundle, "specifications") %></div>
+				<div class="commerce-panel__title"><%= LanguageUtil.get(resourceBundle, "specifications") %>
+				</div>
 				<div class="commerce-panel__content">
 					<dl class="specification-list">
 
 						<%
-						for (CPDefinitionSpecificationOptionValue cpDefinitionSpecificationOptionValue : cpDefinitionSpecificationOptionValues) {
-							CPSpecificationOption cpSpecificationOption = cpDefinitionSpecificationOptionValue.getCPSpecificationOption();
+							for (CPDefinitionSpecificationOptionValue cpDefinitionSpecificationOptionValue : cpDefinitionSpecificationOptionValues) {
+								CPSpecificationOption cpSpecificationOption = cpDefinitionSpecificationOptionValue.getCPSpecificationOption();
 						%>
+
+						<dt class="specification-term">
+							<%= HtmlUtil.escape(cpSpecificationOption.getTitle(languageId)) %>
+						</dt>
+						<dd class="specification-desc">
+							<%= HtmlUtil.escape(cpDefinitionSpecificationOptionValue.getValue(languageId)) %>
+						</dd>
+
+						<%
+							}
+						%>
+
+					</dl>
+
+					<%
+						for (CPOptionCategory cpOptionCategory : cpOptionCategories) {
+							List<CPDefinitionSpecificationOptionValue> categorizedCPDefinitionSpecificationOptionValues = cpContentHelper.getCategorizedCPDefinitionSpecificationOptionValues(cpDefinitionId, cpOptionCategory.getCPOptionCategoryId());
+					%>
+
+					<c:if test="<%= !categorizedCPDefinitionSpecificationOptionValues.isEmpty() %>">
+						<dl class="autofit-float autofit-row autofit-row-center specification-list">
+
+							<%
+								for (CPDefinitionSpecificationOptionValue cpDefinitionSpecificationOptionValue : categorizedCPDefinitionSpecificationOptionValues) {
+									CPSpecificationOption cpSpecificationOption = cpDefinitionSpecificationOptionValue.getCPSpecificationOption();
+							%>
 
 							<dt class="specification-term">
 								<%= HtmlUtil.escape(cpSpecificationOption.getTitle(languageId)) %>
@@ -257,41 +298,15 @@ List<CPMedia> cpAttachmentFileEntries = cpContentHelper.getCPAttachmentFileEntri
 								<%= HtmlUtil.escape(cpDefinitionSpecificationOptionValue.getValue(languageId)) %>
 							</dd>
 
-						<%
-						}
-						%>
-
-					</dl>
-
-					<%
-					for (CPOptionCategory cpOptionCategory : cpOptionCategories) {
-						List<CPDefinitionSpecificationOptionValue> categorizedCPDefinitionSpecificationOptionValues = cpContentHelper.getCategorizedCPDefinitionSpecificationOptionValues(cpDefinitionId, cpOptionCategory.getCPOptionCategoryId());
-					%>
-
-						<c:if test="<%= !categorizedCPDefinitionSpecificationOptionValues.isEmpty() %>">
-							<dl class="autofit-float autofit-row autofit-row-center specification-list">
-
-								<%
-								for (CPDefinitionSpecificationOptionValue cpDefinitionSpecificationOptionValue : categorizedCPDefinitionSpecificationOptionValues) {
-									CPSpecificationOption cpSpecificationOption = cpDefinitionSpecificationOptionValue.getCPSpecificationOption();
-								%>
-
-									<dt class="specification-term">
-										<%= HtmlUtil.escape(cpSpecificationOption.getTitle(languageId)) %>
-									</dt>
-									<dd class="specification-desc">
-										<%= HtmlUtil.escape(cpDefinitionSpecificationOptionValue.getValue(languageId)) %>
-									</dd>
-
-								<%
+							<%
 								}
-								%>
+							%>
 
-							</dl>
-						</c:if>
+						</dl>
+					</c:if>
 
 					<%
-					}
+						}
 					%>
 
 				</div>

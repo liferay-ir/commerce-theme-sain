@@ -421,7 +421,7 @@
 <!-- All vendor & plugins & active js include here -->
 <script src="${javascript_folder}/slick.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="${javascript_folder}/jquery.zoom.js" type="text/javascript" charset="utf-8"></script>
-<script src="${javascript_folder}/jquery.nice-select.min.js"></script>
+<#--<script src="${javascript_folder}/jquery.nice-select.min.js"></script>-->
 <script src="${javascript_folder}/jquery.countdown.min.js"></script>
 <#--<script src="${javascript_folder}/bootstrap.js"></script>-->
 <script src="${javascript_folder}/custom.js"></script>

@@ -186,6 +186,27 @@ body.signed-in {
     }
   }
 
+  .product-detail-description{
+    .nav-underline{
+      justify-content: left;
+      .nav-item {
+        text-transform: none;
+        padding: 15px 15px 0;
+      }
+      .nav-item .nav-link.active::after {
+        height: 3px;
+        left: calc(25%);
+        width: 50%;
+      }
+
+    }
+
+    .tab-content{
+      padding-top: 15px;
+    }
+
+  }
+
 .search-box-wrapper {
   fieldset {
     margin: 7px auto;
