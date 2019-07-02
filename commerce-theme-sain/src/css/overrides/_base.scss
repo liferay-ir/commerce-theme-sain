@@ -1,0 +1,16 @@
+#sain-commerce-theme {
+	button{
+		&:focus {
+			outline: none;
+		}
+	}
+
+	svg {
+		vertical-align: middle
+	}
+}
+
+button {
+	background: none;
+	border: none;
+}
