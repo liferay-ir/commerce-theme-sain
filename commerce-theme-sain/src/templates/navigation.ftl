@@ -10,12 +10,18 @@
         nav_item_css_class = "nav-item"
         nav_item_layout = nav_item.getLayout()
         nav_link_css_class = ""
+        nav_child_link_css_class = ""
+        nav_child_angle=""
+        nav_child_click = ""
 
         dropdown_menu_css_class = ""
         />
 
         <#if nav_item.hasChildren()>
             <#assign
+            nav_child_link_css_class = "has_child"
+            nav_child_click = "return false;"
+            nav_child_angle = '<i class="fa fa-angle-down"></i>'
             nav_item_css_class= "${nav_item_css_class} dropdown"
             nav_link_css_class = "${nav_link_css_class} dropdown-toggle"
             />
@@ -41,9 +47,9 @@
             dropdown_menu_css_class = " dropdown-menu-right"
             />
         </#if>
-        <li class="nav_child_link_css_class">
-            <a href="${nav_item.getURL()}" ${nav_item.getTarget()}>
-                ${nav_item.getName()}
+        <li class="${nav_child_link_css_class}">
+            <a href="${nav_item.getURL()}" ${nav_item.getTarget()} onclick="${nav_child_click}">
+                ${nav_item.getName()} ${nav_child_angle}
             </a>
             <#if nav_item.hasChildren()>
                 <ul class="dropdown">
