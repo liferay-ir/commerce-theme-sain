@@ -98,7 +98,7 @@
                     <!-- start logo area -->
 
                     <!-- start search box area -->
-                    <div class="col-lg-6">
+                    <div class="col-lg-5">
                         <div class="search-box-wrapper">
                             <div class="search-box-inner-wrap">
                                 <#assign
@@ -112,15 +112,25 @@
                     <!-- start search box end -->
 
                     <!-- mini cart area start -->
-                    <div class="col-lg-3 ml-auto">
+                    <div class="col-lg-4 ml-auto">
                         <div class="header-configure-area">
                             <ul class="nav justify-content-end">
                                 <li>
-                                    <a href="${site_default_url}/wishlist">
-                                        <i class="ion-android-favorite-outline"></i>
+                                    <a href="${site_default_url}/orders" title="سفارشات">
+                                        <i class="ion-ios-list-outline"></i>
                                     </a>
                                 </li>
-                                <li class="mini-cart-wrap">
+                                <li>
+                                    <a href="${site_default_url}/downloads" title="دانلودها">
+                                        <i class="ion-ios-cloud-download-outline"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="${site_default_url}/wishlist" title="علاقه مندیها">
+                                        <i class="ion-android-favorite-outline" style="line-height: 54px;"></i>
+                                    </a>
+                                </li>
+                                <li class="mini-cart-wrap" title="سبد خرید">
                                     <#--<a href="${site_default_url}/cart">-->
                                         <#--<i class="ion-bag"></i>-->
                                         <#--<span class="notification ${miniCartClassName}">${orderItemsQuantity}</span>-->
@@ -220,14 +230,41 @@
                                 <img src="${site_logo}" alt="">
                             </a>
                         </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="mobile-main-header">
                         <div class="mobile-menu-toggler">
-                            <div class="mini-cart-wrap">
-                                <@liferay_commerce_ui["mini-cart"] />
-                            </div>
-                            <div class="mobile-menu-btn">
-                                <div class="off-canvas-btn">
-                                    <i class="ion-android-menu"></i>
-                                </div>
+                            <div class="header-configure-area">
+                                <ul class="nav justify-content-end">
+                                <li>
+                                    <a href="${site_default_url}/orders" title="سفارشات">
+                                        <i class="ion-ios-list-outline"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="${site_default_url}/downloads" title="دانلودها">
+                                        <i class="ion-ios-cloud-download-outline"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="${site_default_url}/wishlist" title="علاقه مندیها">
+                                        <i class="ion-android-favorite-outline" style="line-height: 54px;"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="mini-cart-wrap">
+                                        <@liferay_commerce_ui["mini-cart"] />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="mobile-menu-btn">
+                                        <div class="off-canvas-btn">
+                                            <i class="ion-android-menu"></i>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                             </div>
                         </div>
                     </div>
