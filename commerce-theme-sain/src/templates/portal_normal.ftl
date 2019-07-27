@@ -20,7 +20,7 @@
     <link href="${css_folder}/slick.css" rel="stylesheet" type="text/css">
     <link href="${css_folder}/slick-theme.css" rel="stylesheet" type="text/css">
     <!-- Main Style CSS -->
-    <link href="${css_folder}/style.css" rel="stylesheet" type="text/css">
+    <!--link href="${css_folder}/style.css" rel="stylesheet" type="text/css"-->
     <link href="${css_folder}/fonts.css" rel="stylesheet" type="text/css">
 
 </head>
