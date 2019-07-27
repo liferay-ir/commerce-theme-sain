@@ -21,6 +21,16 @@
 @import "minium-product-header";
 @import "minium-product-gallery";
 
+// All Vendor & plugins CSS include
+@import "./vendor.css";
+@import "./slick.css";
+@import "./slick-theme.css";
+
+// Main Style CSS
+@import "./style.css";
+@import "./fonts.css";
+
+
 @import "./overrides/base.scss";
 @import "./overrides/checkout-page.scss";
 @import "./overrides/input.scss";
