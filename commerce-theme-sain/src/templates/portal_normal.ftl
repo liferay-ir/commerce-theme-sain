@@ -199,11 +199,6 @@
                         <div class="header-top-settings">
                             <ul class="nav align-items-center justify-content-center">
                                 <li class="account-settings">
-                                    حساب کاربری
-                                    <i class="fa fa-angle-down"></i>
-                                    <@site_navigation_menu_0 default_preferences=freeMarkerPortletPreferences.getPreferences("portletSetupPortletDecoratorId", "barebone") />
-                                </li>
-                                <li class="account-settings">
                                     <@liferay_commerce["user-management-bar"]
                                     href=accountManagementUrl
                                     showNotifications=true
