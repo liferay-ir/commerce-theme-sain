@@ -1080,7 +1080,9 @@ fieldset legend {
     text-transform: uppercase;
     margin-top: 10px;
 }
-
+.commerce-topbar-button {
+    height: 65px;
+}
 .mini-cart-wrap ul.cart-list li .commerce-btn:hover {
     background-color: #ff5f00;
 }
