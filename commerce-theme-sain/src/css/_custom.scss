@@ -22,13 +22,13 @@
 @import "minium-product-gallery";
 
 // All Vendor & plugins CSS include
-@import "./vendor.css";
-@import "./slick.css";
-@import "./slick-theme.css";
+@import "vendor";
+@import "slick";
+@import "slick-theme";
 
 // Main Style CSS
-@import "./style.css";
-@import "./fonts.css";
+@import "style";
+@import "fonts";
 
 
 @import "./overrides/base.scss";

@@ -15,14 +15,6 @@
 
     <@liferay_util["include"] page=top_head_include />
 
-    <!-- All Vendor & plugins CSS include -->
-    <!--link href="${css_folder}/vendor.css" rel="stylesheet" type="text/css"-->
-    <!--link href="${css_folder}/slick.css" rel="stylesheet" type="text/css"-->
-    <!--link href="${css_folder}/slick-theme.css" rel="stylesheet" type="text/css"-->
-    <!-- Main Style CSS -->
-    <!--link href="${css_folder}/style.css" rel="stylesheet" type="text/css"-->
-    <!--link href="${css_folder}/fonts.css" rel="stylesheet" type="text/css"-->
-
 </head>
 
 <body class="${css_class}">
@@ -115,6 +107,7 @@
                     <div class="col-lg-4 ml-auto">
                         <div class="header-configure-area">
                             <ul class="nav justify-content-end">
+                            <#if (is_signed_in)>
                                 <li>
                                     <a href="${site_default_url}/orders" title="سفارشات">
                                         <i class="ion-ios-list-outline"></i>
@@ -130,6 +123,7 @@
                                         <i class="ion-android-favorite-outline" style="line-height: 54px;"></i>
                                     </a>
                                 </li>
+                            </#if>
                                 <li class="mini-cart-wrap" title="سبد خرید">
                                     <#--<a href="${site_default_url}/cart">-->
                                         <#--<i class="ion-bag"></i>-->
@@ -237,6 +231,7 @@
                         <div class="mobile-menu-toggler">
                             <div class="header-configure-area">
                                 <ul class="nav justify-content-end">
+                            <#if (is_signed_in)>
                                 <li>
                                     <a href="${site_default_url}/orders" title="سفارشات">
                                         <i class="ion-ios-list-outline"></i>
@@ -252,6 +247,7 @@
                                         <i class="ion-android-favorite-outline" style="line-height: 54px;"></i>
                                     </a>
                                 </li>
+                            </#if>
                                 <li>
                                     <div class="mini-cart-wrap">
                                         <@liferay_commerce_ui["mini-cart"] />
