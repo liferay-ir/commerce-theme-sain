@@ -255,7 +255,9 @@ fieldset legend {
 .tooltip>.tooltip-inner {
     border-radius: 0;
 }
-
+.nav-stacked {
+    display: block !important;
+}
 /*------ custom tooltip end -------*/
 /* ---- Sick Slider arrow style start ----*/
 .slick-slider .slick-slide>div>div {
@@ -800,6 +802,10 @@ fieldset legend {
 @media only screen and (max-width: 575.98px) {
     .header-top-settings ul li .account-list {
         left: 0;
+    }
+    .commerce-cart-item {
+        grid-template-areas: "image content delete";
+        grid-template-columns: 75px 180px 75px;
     }
 }
 
@@ -6916,3 +6922,76 @@ only screen and (max-width: 767.98px) {
 }
 
 /*--------- footer main style end ---------*/
+
+/*--------- style more ---------*/
+.table-list thead:first-child tr:first-child th {
+    color: #fff;
+}
+.rtl .dropdown-menu.show {
+    right: auto;
+}
+.commerce-panel__content {
+    background-color: #f1f2f5 !important;
+    border: 1px solid #b9c0cc;
+}
+div#commercePlacedOrderItemsTable {
+    margin-top:15px;
+}
+div#commercePlacedOrderItemsTable td, div#commercePlacedOrderItemsTable th {
+    border: 1px solid #b9c0cc ;
+    background: #f1f2f5 ;
+}
+
+.rtl .navbar-nav {
+    flex-direction: column;
+}
+.rtl .multi-step-indicator .multi-step-indicator-label {
+    left: 50%;
+    right: auto;
+}
+.rtl .portlet-commerce-checkout .form-control, .portlet-commerce-checkout select.form-control:not([size]):not([multiple]) {
+    height: 2.5rem;
+}
+.rtl .commerce-multi-step-nav .multi-step-indicator-label {
+    font-size: 1rem;
+}
+.rtl .btn {
+    padding: .5rem 1rem;
+    font-size: 0.85rem;
+}
+.rtl .form-control {
+    height: 2.5rem;
+}
+.rtl .liferayzoom-flyout {
+    direction: ltr;
+}
+
+.footer-social-link {
+    text-align: center !important;
+}
+
+button#_com_liferay_commerce_checkout_web_internal_portlet_CommerceCheckoutPortlet_continue:hover {
+    color: #fff !important;
+}
+.commerce-checkout-confirmation .btn:hover{
+    color: #fff  !important;
+}
+div#_com_liferay_commerce_checkout_web_internal_portlet_CommerceCheckoutPortlet_commerceOrderItemsSearchContainer th, div#_com_liferay_commerce_checkout_web_internal_portlet_CommerceCheckoutPortlet_commerceOrderItemsSearchContainer td {
+    border: 1px solid #b9c0cc !important;
+    background: #f1f2f5 !important;
+    color: rgb(0, 0, 0) !important;
+}
+ul.commerce-checkout-summary-footer {
+    border: 1px solid #b9c0cc !important;
+    background: #f1f2f5 !important;
+    color: rgb(0, 0, 0) !important;
+}
+address.shipping-address {
+    background-color: #f1f2f5 !important;
+}
+.commerce-checkout-info {
+    border: 1px solid #b9c0cc !important;
+    background: #f1f2f5 !important;
+    color: rgb(0, 0, 0) !important;
+    border-radius: 8px;
+}
