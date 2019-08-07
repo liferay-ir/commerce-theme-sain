@@ -6995,6 +6995,8 @@ address.shipping-address {
     color: rgb(0, 0, 0) !important;
     border-radius: 8px;
 }
+
+
 .login-container .btn {
     padding: 10px 30px !important;
     font-size: 15px;
@@ -7014,4 +7016,31 @@ address.shipping-address {
 }
 .login-container li:nth-child(3) a {
     color: inherit;
+}
+.login-container li a .taglib-text {
+    text-decoration: unset !important;
+}
+
+
+#portlet_com_liferay_login_web_portlet_LoginPortlet .btn {
+    padding: 10px 30px !important;
+    font-size: 15px;
+}
+#portlet_com_liferay_login_web_portlet_LoginPortlet li {
+    padding: 5px 15px;
+}
+#portlet_com_liferay_login_web_portlet_LoginPortlet li a {
+    color: #fff;
+}
+#portlet_com_liferay_login_web_portlet_LoginPortlet li:first-child {
+    background-color: #db3d29;
+}
+#portlet_com_liferay_login_web_portlet_LoginPortlet li:nth-child(2) {
+    background: #008000;
+}
+#portlet_com_liferay_login_web_portlet_LoginPortlet li:nth-child(3) a {
+    color: inherit;
+}
+#portlet_com_liferay_login_web_portlet_LoginPortlet li a .taglib-text {
+    text-decoration: unset !important;
 }
