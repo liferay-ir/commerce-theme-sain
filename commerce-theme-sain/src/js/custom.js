@@ -6,8 +6,12 @@ $window.on('scroll', function () {
     var scroll = $window.scrollTop();
     if (scroll < 300) {
         $(".sticky").removeClass("is-sticky");
+        $(".main-header .mini-cart-wrap").removeClass("is-fix");
+        $(".main-menu-area .contact-top").removeClass("hide");
     } else {
         $(".sticky").addClass("is-sticky");
+        $(".main-header .mini-cart-wrap").addClass("is-fix");
+        $(".main-menu-area .contact-top").addClass("hide");
     }
 });
 /*------ Sticky menu end ------*/
