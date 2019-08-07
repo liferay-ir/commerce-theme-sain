@@ -6995,3 +6995,23 @@ address.shipping-address {
     color: rgb(0, 0, 0) !important;
     border-radius: 8px;
 }
+.login-container .btn {
+    padding: 10px 30px !important;
+    font-size: 15px;
+}
+
+.login-container li {
+    padding: 5px 15px;
+}
+.login-container li a {
+    color: #fff;
+}
+.login-container li:first-child {
+    background-color: #db3d29;
+}
+.login-container li:nth-child(2) {
+    background: #008000;
+}
+.login-container li:nth-child(3) a {
+    color: inherit;
+}
