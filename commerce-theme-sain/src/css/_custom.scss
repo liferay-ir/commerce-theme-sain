@@ -339,3 +339,24 @@ tr.commerce-compare-table__separator {
     padding: 5px 15px;
   }
 }
+.login-container {
+  .btn {
+    padding: 10px 30px !important;
+    font-size: 15px;
+  }
+  li {
+    padding: 5px 15px;
+    a {
+      color: #fff;
+    }
+    &:first-child {
+      background-color: #db3d29;
+    }
+    &:nth-child(2) {
+      background: #008000;
+    }
+    &:nth-child(3) a {
+      color: inherit;
+    }
+  }
+}
