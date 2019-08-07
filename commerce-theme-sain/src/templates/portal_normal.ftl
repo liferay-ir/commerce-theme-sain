@@ -59,7 +59,7 @@
                                 </li>
                                 <#if (!is_signed_in)>
                                     <li class="account-settings">
-                                        <span class="sign-in text-default"><a href="http://shop.rozhbin.ir/product?p_p_id=com_liferay_login_web_portlet_LoginPortlet&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;saveLastPath=false&amp;_com_liferay_login_web_portlet_LoginPortlet_mvcRenderCommandName=%2Flogin%2Fcreate_account" class="sign-in text-default">
+                                        <span class="sign-in text-default"><a href="/product?p_p_id=com_liferay_login_web_portlet_LoginPortlet&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;saveLastPath=false&amp;_com_liferay_login_web_portlet_LoginPortlet_mvcRenderCommandName=%2Flogin%2Fcreate_account" class="sign-in text-default">
                                             عضویت
                                             <span class="icon-monospaced fa fa-address-card-o fa-2"></span>
                                         </a></span>
