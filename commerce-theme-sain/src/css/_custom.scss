@@ -372,7 +372,8 @@ form#_com_liferay_commerce_checkout_web_internal_portlet_CommerceCheckoutPortlet
             line-height: 40px;
             text-decoration: unset;
             i {
-              float: left;
+              position: absolute;
+              left: 35px;
               padding: 8px 10px;
               font-size: 25px;
               background-color: #db3d29;
@@ -393,7 +394,8 @@ form#_com_liferay_commerce_checkout_web_internal_portlet_CommerceCheckoutPortlet
             line-height: 40px;
             text-decoration: unset;
             i {
-              float: left;
+              position: absolute;
+              left: 35px;
               padding: 8px 10px;
               font-size: 25px;
               background-color: #467fcf;
