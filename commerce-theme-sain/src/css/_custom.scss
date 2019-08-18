@@ -294,6 +294,9 @@ span.price__value.price__value--big {
 .commerce-button.commerce-button:hover {
   color: #44556f;
 }
+.commerce-button:hover, .portlet-commerce-checkout .btn:hover {
+  color: #ffffff;
+}
 .pagination > li > a {
   color: #44556f;
 }
@@ -356,6 +359,7 @@ form#_com_liferay_commerce_checkout_web_internal_portlet_CommerceCheckoutPortlet
       font-size: 15px;
       border-top: 0 !important;
       padding: 15px;
+      margin-bottom: 25px;
       li {
           float: none;
           margin: 0;

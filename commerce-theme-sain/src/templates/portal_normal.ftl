@@ -299,7 +299,7 @@
     <div class="off-canvas-overlay"></div>
     <div class="off-canvas-inner-content">
         <div class="btn-close-off-canvas">
-            <i class="ion-android-close"></i>
+            <i class="fa fa-close"></i>
         </div>
 
         <div class="off-canvas-inner">
@@ -317,7 +317,7 @@
             <div class="mobile-navigation">
 
                 <!-- mobile menu navigation start -->
-                <#include "${full_templates_path}/navigation.ftl" />
+                <#include "${full_templates_path}/navigation_mobile.ftl" />
                 <!-- mobile menu navigation end -->
             </div>
             <!-- mobile menu end -->

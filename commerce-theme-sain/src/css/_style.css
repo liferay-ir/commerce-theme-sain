@@ -1379,7 +1379,9 @@ fieldset legend {
 .sticky.is-sticky .mobile-header-top {
     display: none;
 }
-
+.is-sticky .mobile-main-header .mobile-logo {
+    display: none;
+}
 .sticky.is-sticky.mobile-header {
     background-color: #fff;
 }
@@ -1440,7 +1442,7 @@ only screen and (max-width: 767.98px) {
 
 .mobile-main-header .mobile-menu-toggler .mini-cart-wrap {
     display: inline-block;
-    font-size: 24px;
+    font-size: 14px;
     line-height: 1;
     position: relative;
 }
@@ -1501,6 +1503,7 @@ only screen and (max-width: 767.98px) {
     position: relative;
     display: block;
     padding: 10px 0;
+    font-family: iransans;
 }
 
 .mobile-menu li>a:hover {
@@ -1607,7 +1610,7 @@ only screen and (max-width: 767.98px) {
 .off-canvas-wrapper .off-canvas-overlay {
     background-color: rgba(0, 0, 0, 0.4);
     content: '';
-    cursor: url("../img/icon/cancel.png"), auto;
+    cursor: url("../images/icon/cancel.png"), auto;
     position: absolute;
     left: 0;
     top: 0;
@@ -1621,9 +1624,9 @@ only screen and (max-width: 767.98px) {
     padding: 30px;
     height: 100%;
     position: relative;
-    -webkit-transform: translateX(calc(-100% - 50px));
-    -ms-transform: translateX(calc(-100% - 50px));
-    transform: translateX(calc(-100% - 50px));
+    -webkit-transform: translateX(calc(100% - 50px));
+    -ms-transform: translateX(calc(100% - 50px));
+    transform: translateX(calc(100% - 50px));
     -webkit-transition: 0.4s;
     -o-transition: 0.4s;
     transition: 0.4s;
@@ -1669,6 +1672,7 @@ only screen and (max-width: 767.98px) {
     -o-transition: 0.4s;
     transition: 0.4s;
     display: block;
+    padding: 7px;
 }
 
 .off-canvas-wrapper .btn-close-off-canvas:hover i {
@@ -6949,6 +6953,9 @@ div#commercePlacedOrderItemsTable td, div#commercePlacedOrderItemsTable th {
     left: 50%;
     right: auto;
 }
+.rtl .multi-step-indicator .multi-step-indicator-label {
+    right: 35% !important;
+}
 .rtl .portlet-commerce-checkout .form-control, .portlet-commerce-checkout select.form-control:not([size]):not([multiple]) {
     height: 2.5rem;
 }
@@ -6956,8 +6963,8 @@ div#commercePlacedOrderItemsTable td, div#commercePlacedOrderItemsTable th {
     font-size: 1rem;
 }
 .rtl .btn {
-    padding: .5rem 1rem;
-    font-size: 0.85rem;
+    //padding: .5rem 1rem;
+    //font-size: 0.85rem;
 }
 .rtl .form-control {
     height: 2.5rem;
